@@ -81,17 +81,15 @@ def update_session_state():
         ss['start'] = True
         ss.current_quiz = random.sample(quiz.my_questions, NB_QUIZ_QUESTIONS)
         print(f"Current quiz will display {len(ss.current_quiz)} questions")
-        # ss.current_quiz = quiz.initialise_questions(ss.current_quiz)
-        # print("Current quiz has been initialized")
     elif ss.counter == 2:
         # Set start to False
         ss['start'] = True
         # Set stop to True
         ss['stop'] = True
 
-# Initializing Button Text
+# Initializing Button Text at the top of the page
 st.button(label=ss.button_label[ss.counter],
-        key='button_press', on_click= btn_click)
+        key='button_press_top', on_click= btn_click)
 
 # Function to display a question
 def quiz_app():
@@ -134,6 +132,11 @@ def quiz_app():
                         results_placeholder.error("INCORRECT")
                     # Explanation of the Answer
                     expander_area.write(f"*{ss.current_quiz[i].get('explanation')}*")
+
+            # Initializing Button Text at the bottom of the page
+            st.button(label=ss.button_label[ss.counter],
+                    key='button_press_bottom', on_click= btn_click)
+
 
     # calculate score
     if ss.stop:
