@@ -80,8 +80,6 @@ my_questions = [
 # of the options list
 # indeed, we will later hide the first option in the radio button
 # to avoid displaying any selected radio button for the answer
-def initialise_questions(my_questions):
-    for question in my_questions:
-        # Insert "not to be displayed" at the beginning of the options list
-        question["options"].insert(0, "not to be displayed")
-    return(my_questions)
+for question in my_questions:
+    # Insert "not to be displayed" at the beginning of the options list
+    question["options"].insert(0, "not to be displayed")

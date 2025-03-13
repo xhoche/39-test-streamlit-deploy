@@ -81,8 +81,8 @@ def update_session_state():
         ss['start'] = True
         ss.current_quiz = random.sample(quiz.my_questions, NB_QUIZ_QUESTIONS)
         print(f"Current quiz will display {len(ss.current_quiz)} questions")
-        ss.current_quiz = quiz.initialise_questions(ss.current_quiz)
-        print("Current quiz has been initialized")
+        # ss.current_quiz = quiz.initialise_questions(ss.current_quiz)
+        # print("Current quiz has been initialized")
     elif ss.counter == 2:
         # Set start to False
         ss['start'] = True
